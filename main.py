@@ -6,7 +6,7 @@ url = "https://www.kicktraq.com/projects/"
 response = requests.get(url)
 
 soup = BeautifulSoup(response.text, "html.parser")
-projects = soup.find_all("div", class_="project-pledgilizer-mid green")
+projects = soup.find_all("a", )
 for div in projects:
     print(div.get_text(strip=True))
 
