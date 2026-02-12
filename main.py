@@ -1,12 +1,13 @@
-import sys
-sys.stdout.reconfigure(encoding="utf-8")
 import requests
 from bs4 import BeautifulSoup
+
+# 1. Делаем запрос на страницу (пример)
 url = "https://www.kicktraq.com/projects/"
-response = requests.get(url)
+response = requests.get(url)  # response.text содержит HTML
 
+# 2. Создаём объект BeautifulSoup
 soup = BeautifulSoup(response.text, "html.parser")
-projects = soup.find_all("a", )
-for div in projects:
-    print(div.get_text(strip=True))
 
+# 3. Вытаскиваем весь текст со страницы
+text = soup.get_text()
+print(text)

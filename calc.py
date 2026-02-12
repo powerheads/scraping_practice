@@ -1,5 +1,5 @@
-calc = "yes"
-while calc == "yes":
+
+while True:
     print("Input First Number")
     a = float(input())
 
